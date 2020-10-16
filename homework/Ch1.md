@@ -4,8 +4,6 @@
 
 
 
-## 1*
-
 > G是简单图，则有$\varepsilon\left( G \right) \leq \left( \frac{v(G)}{2} \right)$
 
 **方法1（Euler定理）**：
@@ -26,6 +24,8 @@
 
 
 
+
+
 ##  3
 
 > 画出所有四个顶点不同够的简单图
@@ -34,24 +34,27 @@
 
 
 
+
 ## 4*
 
 > 任何至少由两个人构成的群体中，其中有两个人，他们的朋友数一样多。
 
-**证**：将每个人看作顶点，两个人是朋友则在这两人所代表的顶点之间加一条边，因此问题等价于：在对任意满足V(G)≥2的图G中，存在V~i~,V~j~∈V(G),i≠j，使得deg(v~i~)=deg(v~j~).
+**证**：将每个人看作顶点，两个人是朋友则在这两人所代表的顶点之间加一条边，因此问题等价于：在对任意满足$V(G) \geq2$的图G中，存在$V_i,V_j \in V(G),i \ne j$，使得$ deg(v_i)=deg(v_j) $.
 
-**反证法**：假设对任意V~i~,V~j~∈V(G),i≠j，都有deg(v~i~)≠deg(v~j~)
+**反证法**：假设对任意$V_i,V_j \in V(G),i \ne j$，都有$ deg(v_i)\ne deg(v_j) $
 
 deg(v)在G中共有\|V(G)\|个不同的取值
 
 而deg(v)取值范围为0至\|V(G)\|-1，恰好有\|V(G)\|个可能的取值，故每种取值恰好出现一次，分别为0,1,...,
 \|V(G)\|-1
 
-所以存在V~i~,V~j~∈V(G),i≠j，使得deg(v~i~)=0，deg(v~j~)= \|V(G)\|-1
+所以存在$V_i,V_j \in V(G),i \ne j$，使得$deg(v_i)=0，deg(v_j)= \|V(G)\|-1$
 
-即v~i~与所有点都不相连，v~j~与所有点都相连，矛盾，假设不成立。
+即$v_i$与所有点都不相连，$v_j $与所有点都相连，矛盾，假设不成立。
 
 得证。
+
+
 
 
 
@@ -67,33 +70,32 @@ deg(v)在G中共有\|V(G)\|个不同的取值
 
 
 
+
 ## 7*
 
 > 证明下面的结论：
 >
-> (1)ε(K~m,\ n~)=mn
+> (1) $\epsilon(K_{m,n}) = mn$
 >
-> (2)设G是二分图，ε(G)≤v^2^(G)/4
->
-> (1)证：不妨设K~m,\ n~=X∪Y，X∩Y= ∅，其中\|X\|=m，\|Y\|=n
+> (2)设G是二分图，$\epsilon(G) \leq v^2(G)/4$
 
-(1)证：不妨设K~m,\ n~=X∪Y，X∩Y= ∅，其中\|X\|=m，\|Y\|=n
+(1)证：不妨设 $ K_{m,n} = K \cup Y, X \cap Y =\emptyset $，其中\|X\|=m，\|Y\|=n
 
-由K~m,\ n~定义，∀u∈X，deg(u)=n
+由$K_{m,n}$定义，$\forall u \in X, deg(u) =n$
 
-∀v∈Y，deg(v)=m
+$\forall v \in Y, deg(u) =m$
 
 则$\sum_{v \in V(Km,n)}^{}{\deg\left( v \right) = \sum_{u \in X}^{}{\operatorname{deg(u)} + \sum_{v \in Y}^{}{\deg\left( v \right) = 2mn}}}$
 
-由Euler定理，ε(K~m,\ n~)=mn
+由Euler定理，$\epsilon(K_{m,n}) = mn$
 
-(2)ε(G) ≤ε(K~m,\ n~)，V(G)=m+n
+(2) $\epsilon(G) \leq \epsilon(K_{m,n}),V(G) = m+n$
 
-由(1)可得ε(K~m,\ n~)=mn
+由(1)可得 $\epsilon(K_{m,n}) = mn$
 
-所以ε(G) ≤mn≤(m+n)^2^/4
+所以 $\epsilon(G)\leq mn \leq (m+n)^2/4$
 
-即ε(G)≤v^2^(G)/4
+即$\epsilon(G) \leq v^2(G)/4$
 
 
 
