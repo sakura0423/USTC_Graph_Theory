@@ -3,6 +3,7 @@
 # Ch1
 
 
+## 1
 
 > G是简单图，则有$\varepsilon\left( G \right) \leq \left( \frac{v(G)}{2} \right)$
 
