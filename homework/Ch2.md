@@ -131,4 +131,51 @@ Kruskal的算法是有限选择边权较小的边，选择的顺序是和Prim算
 
 ## 22*
 
- 
+> 证明引理2.1 
+>
+> 给定$\omega_1 \leq\omega_2 \leq \dots \leq\omega_t$，则存在一课Huffman树，使得$\omega1,\omega2$对应的顶点时兄弟，且这两个顶点在二叉树中的深度都等于树高
+
+不妨设$w_i$对应的顶点为$v_i,i=1,2,\dots,t$，假设任意Huffman树中$v_1$中的深度不等于树高，即存在$v_k,2\leq k\leq t$，使得$v_k$的深度大于树高 ，显然有$L(v_k)\geq L(v_1)$。
+
+因为
+$$
+WPL(T) = w_1L(v_1) + w_2L(v_2) + \dots + w_tL(v_t)
+$$
+且
+$$
+w_1 \leq w_2 \leq \dots \leq w_t
+$$
+交换$v_1,v_k$的位置，得到$T'$ ，则有
+$$
+\begin{align}
+WPL(T')& = w_1L(v_k) + w_2L(v_2) + \dots + w_tL(v_1) \\
+ & = WPL(T\ + (w_1-w_k)[L(v_k)-L(v_1)]\
+\end{align}
+$$
+
+1. 当$w_1 = w_k$时，$WPL(T) = WPL(T')$，与树$T'$同为Huffman树；
+2. 当$w_1 \lt w_k$时，$WPL(T') \le WPL(T')$，与树$T$为Huffman矛盾；
+
+
+
+则$v_1$的深度等于树高，且同理可证得
+$$
+L(v_1) \geq L(v_2) \geq\dots \geq L(v_t)
+$$
+若$v_1$无兄弟，则由Huffman树WPL最小规则，$v_1$得深度还可以再缩短直至$v_1$有兄弟。
+
+由$L(v_1) \geq L(v_2) \geq\dots \geq L(v_t)$可得$v_2$为$v_1$的兄弟，则有$\omega1,\omega2$对应的顶点为兄弟，且这两个顶点在二叉树中的深度都等于树高。
+
+
+
+## 25
+
+> 证明： 在$v \geq 3$阶的连通图G中 ，存在至少两个顶点，从G中删除这两个顶点后所得图仍为连通。
+
+由推论2.2可知连通图$G$有生成树，记为$T$。
+
+由定理2.2可知树T至少有两片叶，记为$v_1,v_2$。
+
+从$T$中删去$v_1,v_2$得树$T'$显然$T'$仍然连通
+
+从G中删去$v_1,v_2$得到图中$G'$，易知$\forall u_1,u_2 \in V(G'), u_1,u_2 \in V(T')$且存在轨道$p(u_1,u_2) \in E(T') \subseteq E(G')$， 则$G'$ 仍然连通。
