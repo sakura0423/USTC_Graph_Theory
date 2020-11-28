@@ -71,5 +71,15 @@ $$
 
 
 
+## 14
 
+> 用Kruskal算法求图中边权图最小的生成树
+
+![Ch2-14](/Users/sakura/USTC_Graph_Theory/homework/images/Ch2-14.png)
+
+
+
+Kruskal的算法是有限选择边权较小的边，选择的顺序是和Prim算法不一样的是，如下图所示，红色标记的是最小生成树，序号则是顺序。
+
+![Ch2-14-2](/Users/sakura/USTC_Graph_Theory/homework/images/Ch2-14-2.png)
 
