@@ -36,6 +36,7 @@ $000 \stackrel{0} {\longrightarrow} 000 \stackrel{1} {\longrightarrow} 001 \stac
     同理$\mid X \mid \leq \mid Y \mid$.
     $\therefore \mid X \mid = \mid Y \mid$.
     $\therefore G$有偶数个顶点。
-    在图6.27中，$\because G={v_1, v_2, v_3, v_4, v_5} \bigcup {v_6, v_7, v_8, v_9, v_10, v_11} = X \bigcup Y$, 且$X \bigcap Y$没有边
+    在图6.27中，$\because G=\{v_1, v_2, v_3, v_4, v_5\} \bigcup \{v_6, v_7, v_8, v_9, v_{10}, v_{11}\} = X \bigcup Y$, 且$X \bigcap Y$没有边
+    ![Ch6-9-1](./images/Ch6-9-1.png)
     $\therefore Herschel$图为二分图，且有11个顶点
     $\therefore$不是$Hamilton$图
