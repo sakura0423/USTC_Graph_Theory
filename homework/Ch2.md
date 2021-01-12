@@ -135,7 +135,7 @@ Kruskal的算法是有限选择边权较小的边，选择的顺序是和Prim算
 >
 > 给定$\omega_1 \leq\omega_2 \leq \dots \leq\omega_t$，则存在一课Huffman树，使得$\omega1,\omega2$对应的顶点时兄弟，且这两个顶点在二叉树中的深度都等于树高
 
-不妨设$w_i$对应的顶点为$v_i,i=1,2,\dots,t$，假设任意Huffman树中$v_1$中的深度不等于树高，即存在$v_k,2\leq k\leq t$，使得$v_k$的深度大于树高 ，显然有$L(v_k)\geq L(v_1)$。
+不妨设$w_i$对应的顶点为$v_i,i=1,2,\dots,t$，假设任意Huffman树中$v_1$中的深度不等于树高，即存在$v_k,2\leq k\leq t$，使得$v_k$的深度等于树高 ，显然有$L(v_k)\geq L(v_1)$。
 
 因为
 $$
@@ -149,7 +149,7 @@ $$
 $$
 \begin{align}
 WPL(T')& = w_1L(v_k) + w_2L(v_2) + \dots + w_tL(v_1) \\
- & = WPL(T\ + (w_1-w_k)[L(v_k)-L(v_1)]\
+ & = WPL(T) + (w_1-w_k)[L(v_k)-L(v_1)]\
 \end{align}
 $$
 
