@@ -129,6 +129,12 @@ Kruskal的算法是有限选择边权较小的边，选择的顺序是和Prim算
 
 ![Ch2-20](/Users/sakura/USTC_Graph_Theory/homework/images/Ch2-20.png)
 
+
+
+
+
+
+
 ## 22*
 
 > 证明引理2.1 
@@ -153,8 +159,8 @@ WPL(T')& = w_1L(v_k) + w_2L(v_2) + \dots + w_tL(v_1) \\
 \end{align}
 $$
 
-1. 当$w_1 = w_k$时，$WPL(T) = WPL(T')$，与树$T'$同为Huffman树；
-2. 当$w_1 \lt w_k$时，$WPL(T') \le WPL(T')$，与树$T$为Huffman矛盾；
+1. 当$w_1 = w_k$时，$WPL(T') = WPL(T)$，与树$T'$同为Huffman树；
+2. 当$w_1 \lt w_k$时，$WPL(T') \le WPL(T)$，与树$T$为Huffman矛盾；
 
 
 
@@ -162,7 +168,7 @@ $$
 $$
 L(v_1) \geq L(v_2) \geq\dots \geq L(v_t)
 $$
-若$v_1$无兄弟，则由Huffman树WPL最小规则，$v_1$得深度还可以再缩短直至$v_1$有兄弟。
+若$v_1$无兄弟，则由Huffman树WPL最小规则，$v_1$的深度还可以再缩短直至$v_1$有兄弟。
 
 由$L(v_1) \geq L(v_2) \geq\dots \geq L(v_t)$可得$v_2$为$v_1$的兄弟，则有$\omega1,\omega2$对应的顶点为兄弟，且这两个顶点在二叉树中的深度都等于树高。
 
