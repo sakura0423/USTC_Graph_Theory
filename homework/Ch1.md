@@ -152,7 +152,39 @@ $$
 
 
 
+
+
 ## 12
+
+> $G$ 是简单图，$\nu(G) \geq4$ 整数$n$ 满足 $1 \lt n \lt \nu (G)$。证明： 若任给G的n个顶点构成的顶点子集，其导出子图都有相同的边数，则$ G\cong K_{\nu(G)}$ 或 $G\cong K^{c}_{\nu(G)}$ 。
+
+设G中n个顶点的导出子图的变数为m
+
+设$v_i$是G中任意顶点，那么在$G-v_i$中$n$个顶点的导出子图共有$C_{\nu-1}^{n}$个。在这$C_{\nu-1}^{n}$个导出子图中，$G-v_i$中任一一条边为$uv$ 出现的次数为$C^{n-2}_{\nu-3}$，则有等式：
+$$
+\epsilon(G) - d(v_i) =  \epsilon(G-v_i)  = \frac{m * C_{\nu-1}^{n}}{C^{n-2}_{\nu-3}}
+$$
+同理，对于任意不是$v_i$的顶点$v_j$有：
+$$
+\epsilon(G) - d(v_j) =  \epsilon(G-v_j)  = \frac{m * C_{\nu-1}^{n}}{C^{n-2}_{\nu-3}}
+$$
+设：
+$$
+a_{ij} = 
+\begin{cases}
+1 , & \text{$v_iv_j \in$ E(G)}  \\
+0,  & 否则
+\end{cases}
+$$
+同理可得：
+$$
+\epsilon(G) - d(v_i) - d(v_j)+a_{ij} =  \epsilon(G-\{v_i,v_j\})  = \frac{m * C_{\nu-2}^{n}}{C^{n-2}_{\nu-4}}
+$$
+用此式去减上两式，可以发现$a_{ij}$的值与 $i，j $无关
+
+证毕
+
+
 
 
 
