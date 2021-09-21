@@ -5,21 +5,30 @@
 
 ## 1
 
-> G是简单图，则有$\varepsilon\left( G \right) \leq \left( \frac{v(G)}{2} \right)$
+> $G$是简单图，则有 $ \varepsilon(G)\leq C_{ \nu(G) }^2 $
 
 **方法1（Euler定理）**：
 
-因为G是简单图 所以∀v∈V(G),有deg(v)≤v-1
+因为$G$是简单图，所以$∀v∈V(G)$，有$deg(v)≤v-1$
 
-则$\sum_{v \in V(G)}^{}{\deg\left( V \right) \leq v(v - 1)}$
+则有:
+$$
+\sum_{v \in V(G)}{\deg( V ) \leq v(v - 1)}
+$$
 
-由Euler定理，$\varepsilon\left( G \right) = \frac{\sum_{v \in V(G)}^{}{\deg\left( V \right)}}{2} \leq \frac{v\left( v - 1 \right)}{2}$，得证
+
+由Euler定理，则有:
+$$
+\varepsilon\left( G \right) = \frac{\sum_{v \in V(G)}^{}{\deg\left( V \right)}}{2} \leq \frac{v\left( v - 1 \right)}{2}
+$$
 
 **方法2（组合）：**
 
-在简单图中，任意两顶点之间最多存在一条边
+在简单图中，任意两顶点之间最多存在一条边，则最多只有$C_{\nu(G)}^{2}$
 
-即$\varepsilon\left( G \right) \leq \left( \frac{v(G)}{2} \right)$
+即$\varepsilon\left( G \right) \leq C_{\nu(G)}^{2}$
+
+
 
 
 
@@ -32,6 +41,8 @@
 > 画出所有四个顶点不同的简单图
 
 一共11个（图略）。
+
+
 
 
 
@@ -72,31 +83,44 @@ deg(v)在G中共有\|V(G)\|个不同的取值
 
 
 
+
+
 ## 7*
 
 > 证明下面的结论：
 >
-> (1) $\epsilon(K_{m,n}) = mn$
+> (1) $\varepsilon(K_{m,n}) = mn$
 >
-> (2)设G是二分图，$\epsilon(G) \leq v^2(G)/4$
+> (2)设G是二分图，$\varepsilon(G) \leq v^2(G)/4$
 
-(1)证：不妨设 $ K_{m,n} = K \cup Y, X \cap Y =\emptyset $，其中\|X\|=m，\|Y\|=n
+**（1）**不妨设 $ K_{m,n} = X \cup Y, X \cap Y =\emptyset $，其中$|X|=m，|Y|=n$
 
-由$K_{m,n}$定义，$\forall u \in X, deg(u) =n$
+由二分图$K_{m,n}$定义：$\forall u \in X,v \in Y 	$，有$deg(u)=m, deg(v) =n$
 
-$\forall v \in Y, deg(u) =m$
+则有：
+$$
+\sum_{v \in V(K_{m,n})}^{}{\deg\left( v \right) = \sum_{u \in X}^{}{\operatorname{deg(u)} + \sum_{v \in Y}^{}{\deg\left( v \right) = 2mn}}}
+$$
+由Euler定理，$\varepsilon(K_{m,n}) = mn$
 
-则$\sum_{v \in V(Km,n)}^{}{\deg\left( v \right) = \sum_{u \in X}^{}{\operatorname{deg(u)} + \sum_{v \in Y}^{}{\deg\left( v \right) = 2mn}}}$
 
-由Euler定理，$\epsilon(K_{m,n}) = mn$
+**（2）**设$G$的二分图的两个部分节点数量分别为$m,n$
 
-(2) $\epsilon(G) \leq \epsilon(K_{m,n}),V(G) = m+n$
+显然有 $\varepsilon(G) \leq \varepsilon(K_{m,n}),V(G) = m+n$
 
-由(1)可得 $\epsilon(K_{m,n}) = mn$
+并且由(1)可得 $\varepsilon(K_{m,n}) = mn$
 
-所以 $\epsilon(G)\leq mn \leq (m+n)^2/4$
+所以 有：
+$$
+\varepsilon(G)\leq mn \leq (m+n)^2/4
+$$
 
-即$\epsilon(G) \leq v^2(G)/4$
+
+即$\varepsilon(G) \leq v^2(G)/4$
+
+
+
+
 
 
 
@@ -104,13 +128,16 @@ $\forall v \in Y, deg(u) =m$
 
 ## 8
 
-> 设G是图，给定$V(G)$的非空真子集V‘。记k为一个端点在V’中，另一个端点在$V(G)-V'$中的变数。若V'中度数为奇数的顶点数为偶数，则k为偶数；否则，k为奇数
+> 设$G$是图，给定$V(G)$的非空真子集$V’$，记$k$为一个端点在$V’$中，另一个端点在$V(G)-V'$中的边数。若$V'$中度数为奇数的顶点数为偶数，则$k$为偶数；否则，$k$为奇数
 
-设$\epsilon$是V‘的顶点导出子图的边的个数，则k有：
+设$\varepsilon$是$V'$的顶点导出子图的边的个数，则$k$有：
 $$
-k = \sum_{v \in V_o^{'}}^{}deg(v) + \sum_{v \in V_e^{'}}^{}deg(v) - 2 \epsilon
+k = \sum_{v \in V_o^{'}}^{}deg(v) + \sum_{v \in V_e^{'}}^{}deg(v) - 2 \varepsilon
 $$
-因为 $2 \epsilon 和\sum_{v \in V_e^{'}}^{}deg(v)$一定是偶数，所以k的奇偶只和$ \sum_{v \in V_o^{'}}^{}deg(v) $有关：若V'中度数为奇数的顶点数为偶数，则k为偶数；否则，k为奇数。
+因为 $2 \varepsilon$ 和 $\sum_{v \in V_e^{'}}^{}deg(v)$ 一定是偶数，所以$k$的奇偶只和 $ \sum_{v \in V_o^{'}}^{}deg(v) $ 有关：若$V'$中度数为奇数的顶点数为偶数，则$k$为偶数；否则，$k$为奇数。
+
+
+
 
 
 
@@ -119,6 +146,8 @@ $$
 > 每个顶点的度数都是2的连通图是一个圈。
 
 用最长轨法来证明，设为$P(v_0,v_n)$，显然有$v_0$可得该图中必有圈，并且连接的必然是$v_n$ ，否则某个顶点的度数会是3。
+
+
 
 
 
@@ -147,6 +176,8 @@ $$
 > 构造以一个二分图G，使得G不与任何K维立方体的子图同构。其中，k为任意正整数。
 
 满足此情况的答案有很多，可以利用k本身构造例如：$K_{1,k+1}$ ， 或者构造一个特定的例如： $K_{114,154}$
+
+
 
 
 
@@ -210,7 +241,7 @@ $$
 
 ## 14*
 
-> 我们将图G中所有定点的度数按照从大到小的顺序排列，称为图G的度数序列。证明：
+> 我们将图G中所有顶点的度数按照从大到小的顺序排列，称为图G的度数序列。证明：
 >
 > (1) 7,6,5,4,3,3,2   和 6,6,5,4,3,3,1都不是简单图的度数序列。
 >
@@ -224,9 +255,9 @@ $$
 - 若是简单图，则必有$\Delta \leq 6$，但是存在度数为7的点，则`7,6,5,4,3,3,2`不是简单图。
 - 若是简单图，则因为只有7个顶点，序列中的两个度数为6的顶点与图中每个点都相邻，则必有$\delta \geq 2$，但存在度数为1的 点，则不是简单图。
 
-(2) 证明：由书上定理1.1可得
+(2) 证明：由欧拉定理得：
 $$
-\sum_{v  \in V(G)} deg(v) = 2 \epsilon(G)
+\sum_{v  \in V(G)} deg(v) = 2 \varepsilon(G)
 $$
 显然$\sum_{i=1}^{n}d_i$是偶数。
 
@@ -234,8 +265,8 @@ $$
 
 然后我们进行拆分，设$\sum_{i=1}^{k}d_i = D_1+D2$，其中：
 
-- $D_1$是$v1,\dots,v_k$的顶导出子图 的度数之和。易得 $D_1 \leq k(k-1)$；
-- $D_2$是$v1,\dots,v_k$之间$v_{k+1},\dots,v_n$连线数。并且$v_{k+1},\dots,v_n$ 可以给予的$v1,\dots,v_k$的最大的度数之和是：$\sum_{i=k+1}^{n}min\{k,d_i\}$，所以有：
+- $D_1$是$v1,\dots,v_k$的顶导出子图 的度数之和，易得 $D_1 \leq k(k-1)$；
+- $D_2$是$v1,\dots,v_k$之间$v_{k+1},\dots,v_n$连线数，并且$v_{k+1},\dots,v_n$ 可以给予的$v1,\dots,v_k$的最大的度数之和是：$\sum_{i=k+1}^{n}min\{k,d_i\}$，所以有：
 
 $$
 D_2 \leq \sum_{i=k+1}^{n}min\{k,d_i\}
@@ -251,14 +282,20 @@ $$
 
 
 
-
 ## 15
 
 > 任给无环图G，G有一个生成子图H，满足：(1) H是二分图；(2)任给$u \in V(G) = V(H)$，都有$d_H(u) \geq d_G(u)/2$
 
-采用类似“最长轨”的思想，这里假设$H_K$是**边数最多**的二分生成子图$H_k$，并架设命题不成立。
+证明：对于任意图，均有为二分图的生成子图，因为去除所有边的图也是二分子图。
 
-根据假设，$H_K$里存在点$v_o \in V(G)$使得$d_H(v') \lt \frac{1}{2}d_G(v_0)$，并假设此二分图划分为X和Y，且$v_0 \in X$
+采用类似“最长轨”的思想，这里假设$H_K$是**边数最多**的二分生成子图$H_k$，并假设命题不成立。
+
+根据假设，$H_K$里存在点$v_o \in V(G)$使得$d_H(v_0) \lt \frac{1}{2}d_G(v_0)$，并假设此二分图划分为$X$和$Y$，且$v_0 \in X$。
+
+我们将$v_0$与$Y$的连线全部去除，再增加原本$V(G)$中$v_0$与$X$中其他顶点的连线。显然，此时仍然是二分图。
+
+此时，$H_K$的边数会变化$d_G(v_0)-2d_H(v_0)$，由上述的不等式可知，边数增加了，这和假设矛盾。
+
 
 
 
@@ -267,15 +304,37 @@ $$
 
 ## 16*
 
-> 假设G是简单图 ，且$\delta(G)\geq k$，则 G中有长为k的轨道。
+> 假设G是简单图 ，且$\delta(G)\geq k$，则 $G$ 中有长为 $k$ 的轨道。
 
 证明：此题用最长轨法证明，设$P(v_0, v_m)$是该图的最长轨。假设它的长度小于k，即$m \lt k$。
 
 对于$v_0$，因为$\delta(G)\geq k$，除去与轨道$P(v_0, v_m)$上的顶点有连线外，$v_0$ 至少与轨道外的一个顶点的相邻，与最长轨的假设矛盾！
 
-则 G的最长轨长度至少为k，所以存在长为k的 轨道。
+则 $G$ 的最长轨长度至少为 $k$，所以存在长为 $k$ 的 轨道。
 
 
+
+
+
+
+
+## 18
+
+> $G$是简单图，且$\varepsilon(G) \geq C_{\nu(G)-1}^2$， 则$G$是连通图
+
+证明：假设 $G$ 不连通，将这些连通片分为两类，顶点个数分别为 $v_1，\nu(G)-v_1$，则有：
+$$
+\varepsilon(G) \leq C_{v_1}^{2}+C_{\nu(G)-v_1}^{2}
+$$
+
+
+对于不等式，易得：
+$$
+C_{v_1}^{2}+C_{\nu(G)-v_1}^{2} \leq C_{\nu(G)-1}^2
+$$
+
+
+这与题意产生矛盾，所以G是连通图。
 
 
 
@@ -285,19 +344,23 @@ $$
 
 ## 19*
 
-> (1)证明：任给$\epsilon \in E(G)$，都满足$\omega(G) \leq \omega(G-e) \leq \omega(G)+1$
+> (1)证明：任给$\varepsilon \in E(G)$，都满足$\omega(G) \leq \omega(G-e) \leq \omega(G)+1$
 >
 > (2)说明：对于图G的任意顶点v，用$G-v$ 替代$G-e$，(1)中的公示未必成立。
 
-(1)证明：假设e在连通片$G_1$中，若去掉后仍连通，则有：
+(1)证明：假设 $e$ 在连通片$G_1$中，若去掉后仍连通，则有：
 $$
 \omega(G) = \omega(G-e) \lt \omega(G)+1
 $$
-若使G1分成了两个连通片，则有：
+若使$G_1$分成了不连通，因为删去一条边最多使$G_1$变为两个连通片，则有：
 $$
-\omega(G) \lt \omega(G-e) = \omega(G)+1
+\omega(G) \lt \omega(G-e)
 $$
-综上有：
+又因为删除一条边最多使原连通片变为两个连通片（用反证法易得），则有：
+$$
+\omega(G-e) = \omega(G)+1
+$$
+综上：
 $$
 \omega(G) \leq \omega(G-e) \leq \omega(G)+1
 $$
@@ -307,6 +370,7 @@ $$
 
 - 星
 - 含有度数为0的顶点的图
+
 
 
 
