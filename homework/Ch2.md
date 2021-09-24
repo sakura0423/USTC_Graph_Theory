@@ -127,8 +127,7 @@ Kruskal的算法是有限选择边权较小的边，选择的顺序是和Prim算
 
 需要注意的是此题的权重之和并不是1，许多人误以为权重之和必须是1。
 
-![Ch2-20](/Users/sakura/USTC_Graph_Theory/homework/images/Ch2-20.png)
-
+![Ch2-20]
 
 
 
