@@ -20,7 +20,26 @@ $$
 n_1 =  \sum_{i=2}^{k}(i-2)n_i +2
 $$
 
+## 3
 
+
+> 证明： 如果一棵树只有两片树叶，则这棵树是一条轨。（反证法）
+
+**证明：**
+
+假设 $\exist T_0$  是一棵只有两片树叶的树 ， 但$T_0$不是轨。
+
+则存在$u$ 使得$ deg(u) \ge 3 $  
+
+又因为$T_0$ 只有两片叶子 。 所以，有$\nu(T_0) - 2$ 个顶点的度数 $\ge 2$  。
+
+于是有 ， $\sum\limits_{v_i\in v(T_0)} deg(v_i)  \ge 1 + 1 + 3 + 2*(\nu (T_0) -3) = 2\nu (T_0) - 1 $
+
+又由欧拉公式，  $\sum\limits_{v_i\in v(T_0)} deg(V_i)  = 2(\nu(T_0) - 1) $
+
+矛盾。
+
+所以，如果一棵树只有两片树叶，则这棵树是一条轨。
 
 
 ## 4
@@ -60,7 +79,56 @@ $$
 ### 方法二
 
 可以用最长轨法证明最长轨的中点为树的中心。
+取树的最长轨道。
 
+**引理一：  **中心在最长轨道上。
+
+设最长轨道为$P(v_0,v_n) = v_0e_1v_1···v_ie_{i+1}···v_n $ ,  则$l(v_{\lfloor \frac{n+1}{2} \rfloor}) = \lfloor \frac{n+1}{2} \rfloor$  否则存在更长的轨道。
+
+对任意 $v_i \in P(v_0,v_n) ,  l(v_i) = max\{ dist(v_0,v_i) , dist(v_i,v_n) \} \ge  \lfloor \frac{n+1}{2}\rfloor  = l(v_{\lfloor \frac{n+1}{2} \rfloor}) $  
+
+对任意$v'\notin P(v_0,v_n)$， 存在一点$v_i\in P(v_0,v_n)$ 使得，$P_0(v',v_i)\cap P(v_0,v_n) = v_i$  ，有 $l(v') \ge dist(v',v_i) + max\{ dist(v_i,v_0) , dist(v_i,v_n)\}  > l(v_i) \ge l(v_{\lfloor \frac{n+1}{2} \rfloor}) = \lfloor \frac{n+1}{2} \rfloor $ 
+
+则 $r(G) = min \lbrace l(v)| v \in V  \rbrace =  \lfloor \frac{n+1}{2} \rfloor $
+
+ 所以只有在最长轨道上的点可能是中心。
+
+引理得证。
+
+若最长轨道长为偶数，则只有一个点$l(v) =  \lfloor \frac{n+1}{2} \rfloor$，则为一个中心。若为奇数, 则有中间两个相邻点 满足$l(v) =  \lfloor \frac{n+1}{2} \rfloor$，则为中间两个相邻顶点为中心。 
+
+## 8
+
+
+> 2.8  证明：  若 $d_1 \ge d_2 \ge··· \ge d_v$  是正整数序列 ，则此序列是树的度数序列当且仅当$\sum\limits_{i=1}^{v} d_i = 2(v -1)$ 。
+
+**证明：**
+
+**充分性：** 
+
+ 若 $d_1 \ge d_2 \ge··· \ge d_v$  是正整数序列，且是树$T$的度数序列。
+
+则$\sum\limits_{i=1}^{v} d_i = \sum\limits_{v_i \in T}deg(v_i) =2\epsilon = 2(v-1)$ 
+
+**必要性：**
+
+**命题**： $d_1 \ge d_2 \ge··· \ge d_v$  是正整数序列  ， 若$\sum\limits_{i=1}^{v} d_i = 2(v -1)$  则此序列是树的度数序列。
+
+对$v$进行归纳。
+
+当$ v = 2$ 时 ，$d_1 = d_2 = 1$ , 是树的度数序列。
+
+假设，$v = k $ 时命题成立。
+
+则$v = k + 1 时$ ， 若  $\sum\limits_{i=1}^{k+1} d_i = 2(k+1 -1)$
+
+​		必有 $d_{k+1} = 1$ ，否则  $\sum\limits_{i=1}^{k+1} d_i \ge (k+1)d_{k+1}  \ge 2(k+1 )> 2(k+1-1) $ 
+
+​		必有 $d_{1} \ge 2$ ，否则  $\sum\limits_{i=1}^{k+1} d_i \le (k+1)d_{1}  \le (k+1 ) < 2(k+1-1)$		
+
+​		考虑到序列 ， $d_1 - 1 , d_2 , d_3 , ···,d_k$     ，共k 个点 ， 满足归纳假设, 可构成一棵树 。不防设构成树$T_0$ 。连接 $v_0 , v_{k+1}$  。 构成一棵新树 $T_1$ 。 $ T_1 $ 的度数序列即为 $d_1  , d_2 , d_3 , ···,d_{k+1}$ 。 命题成立。
+
+得证。
 
 
 ## 11
