@@ -127,9 +127,48 @@ $\forall v \subseteq V(T)$，都有$o(T-v)=1$，则$V(T)$为偶数。
 
 
 
+## 16
+
+> 由a,b,c,d,e,f六个人组成检查团，检查5个单位的工作。若某单位与某人有过工作联系，则不能选派此人到该单位去检查工作。已知第一单位与b,v,d有过联系，第二单位与a,e,f，第三单位与a,b,e,f，第四单位与a,b,d,f,第五单位与a,b,c有过联系，请列出去各个单位进行检查的人员名单。
+
+根据题意可以得到匹配问题的模型
+
+![Ch5-16](/Users/sakura/USTC_Graph_Theory/homework/images/ch5-16-1.png)
+
+取初始匹配$M=\empty$
+
+（1）选择未匹配节点$y_1$，得到可增广轨道$\{y_1a\}$, $M=\{y_1a\}$
+
+![Ch5-16](/Users/sakura/USTC_Graph_Theory/homework/images/ch5-16-2.png)
+
+
+
+（2）选择未匹配节点$y_2$，得到可增广轨道$\{y_2b\}$, $M=\{y_1a,y_2b\}$
+
+![Ch5-16](/Users/sakura/USTC_Graph_Theory/homework/images/ch5-16-3.png)
+
+（3）选择未匹配节点$y_3$，得到可增广轨道$\{y_3c\}$, $M=\{y_1a,y_2b,y_3c\}$
+
+![Ch5-16](/Users/sakura/USTC_Graph_Theory/homework/images/ch5-16-4.png)
+
+（4）选择未匹配节点$y_4$，得到可增广轨道$\{y_4e\}$, $M=\{y_1a,y_2b,y_3c,y_4e\}$
+
+![Ch5-16](/Users/sakura/USTC_Graph_Theory/homework/images/ch5-16-5.png)
+
+（5）选择未匹配节点$y_5$，得到可增广轨道$\{y_5f\}$, $M=\{y_1a,y_2b,y_3c,y_4e,y_5f\}$
+
+![Ch5-16](/Users/sakura/USTC_Graph_Theory/homework/images/ch5-16-6.png)
+
+此时所有节点都被许配，算法停止。可以得到一种匹配方式为$M=\{y_1a,y_2b,y_3c,y_4e,y_5f\}$
+
+
+
 
 
 ## 17
+
+
+
 >设有四个人$A, B, C, D$，有四分工作$a, b, c, d$，每个人做某份工作的效率如下面的矩阵所示，试求最佳的工作分配方案
 
 ![Ch5-17-1](./images/Ch5-17-1.png)
