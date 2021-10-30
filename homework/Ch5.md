@@ -222,3 +222,4 @@ $\therefore \widehat{l}(v)+\widehat{l}(u)=l(v)-\alpha_l+l(u) \geq l(v)+l(u)-(l(v
 对$\forall v \notin S, u \in Y$,
 $\widehat{l}(v)=l(v), \widehat{l}(u) \geq l(u), \widehat{l}(v)+\widehat{l}(u) \geq \omega(u,v)$.
 综上，$Kuhn-Munkreas$算法修改顶标后，$\widehat{l}$仍然是可行顶标。
+
