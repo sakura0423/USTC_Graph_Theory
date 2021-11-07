@@ -167,8 +167,6 @@ $\forall v \subseteq V(T)$，都有$o(T-v)=1$，则$V(T)$为偶数。
 
 ## 17
 
-
-
 >设有四个人（行）$A, B, C, D$，有四分工作（列）$a, b, c, d$，每个人做某份工作的效率如下面的矩阵所示，试求最佳的工作分配方案。
 >$$
 >\begin{pmatrix}
@@ -180,7 +178,6 @@ $\forall v \subseteq V(T)$，都有$o(T-v)=1$，则$V(T)$为偶数。
 >  \end{pmatrix}
 >$$
 >
-
 
 按照$Kuhn-Munkreas$算法一步步计算即可。
 构造相等子图$G_l$
@@ -215,11 +212,17 @@ $$
 $\alpha_l = min_{x \in S, y \notin T}\{l(x) + l(y) - \omega(x,y)\}$
 
 对$\forall v \in S, u \in Y$,
-(1) 若$u \in T$，则$\widehat{l}(v)+\widehat{l}(u)=l(v)-\alpha_l+l(u)+\alpha_l=l(v)+l(u) \geq \omega(u,v)$.
-(2) 若$u \in Y \bigcap u \notin T$，
-$\because \alpha_l \leq l(v) + l(u) - \omega(u,v)$，
-$\therefore \widehat{l}(v)+\widehat{l}(u)=l(v)-\alpha_l+l(u) \geq l(v)+l(u)-(l(v)+l(u)-\omega(u,v)) \geq \omega(u,v)$.
-对$\forall v \notin S, u \in Y$,
-$\widehat{l}(v)=l(v), \widehat{l}(u) \geq l(u), \widehat{l}(v)+\widehat{l}(u) \geq \omega(u,v)$.
+(1) 若$u \in T$
+$$
+\widehat{l}(v)+\widehat{l}(u)=l(v)-\alpha_l+l(u)+\alpha_l=l(v)+l(u) \geq \omega(u,v)
+$$
+(2) 若$u \in Y $并且$ u \notin T$， 因为有$\alpha_l \leq l(v) + l(u) - \omega(u,v)$
+$$
+\widehat{l}(v)+\widehat{l}(u)=l(v)-\alpha_l+l(u) \geq l(v)+l(u)-(l(v)+l(u)-\omega(u,v)) \geq \omega(u,v)
+$$
+(3) 若对$\forall v \notin S, u \in Y$
+$$
+\widehat{l}(v)+\widehat{l}(u) =l(v)+\widehat{l}(u) \geq l(v)+l(u) =  \omega(u,v)
+$$
 综上，$Kuhn-Munkreas$算法修改顶标后，$\widehat{l}$仍然是可行顶标。
 
